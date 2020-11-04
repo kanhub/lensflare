@@ -1,3 +1,3 @@
 # Lens Flare
 
-An aweosme photo gallery application written in Go
+An awesome photo gallery application written in Go
