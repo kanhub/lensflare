@@ -16,6 +16,10 @@ func handlerFunc(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprint(w, "<h1>Welcome my website</h1>")
 	} else if r.URL.Path == "/contact" {
 		fmt.Fprint(w, "<p>To get in touch, please send an email to <a href=\"mailto:support@lensflare.com\">support@lensflare.com</a></p>")
+	} else {
+		// WriteHeader to grab the 404 status constant within the http package
+		w.WriteHeader(http.StatusNotFound)
+		fmt.Fprint(w, "<h1>Could not find that page :(</h1>")
 	}
 }
 
