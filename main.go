@@ -10,6 +10,7 @@ func handlerFunc(w http.ResponseWriter, r *http.Request) {
 	// pay attention to the logs in Fresh
 	// fresh has default config, but you can have your own config so it watches
 	// files that change and the reload based on files you care about
+	w.Header().Set("Content-Type", "text/html")
 	fmt.Println("Someone visited our page")
 	fmt.Fprint(w, "<h1>Welcome my website</h1>")
 }
