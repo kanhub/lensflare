@@ -12,7 +12,11 @@ func handlerFunc(w http.ResponseWriter, r *http.Request) {
 	// files that change and the reload based on files you care about
 	w.Header().Set("Content-Type", "text/html")
 	fmt.Println("Someone visited our page")
-	fmt.Fprint(w, "<h1>Welcome my website</h1>")
+	if r.URL.Path == "/" {
+		fmt.Fprint(w, "<h1>Welcome my website</h1>")
+	} else if r.URL.Path == "/contact" {
+		fmt.Fprint(w, "<p>To get in touch, please send an email to <a href=\"mailto:support@lensflare.com\">support@lensflare.com</a></p>")
+	}
 }
 
 func main() {
